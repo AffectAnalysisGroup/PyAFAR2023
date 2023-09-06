@@ -65,42 +65,28 @@
     <div class="jumbotron-grey">
       <div class="row">
         <div class="col-12 text-center">
-          <h3><b>Abstract & Method</b></h3>
+          <h3><b>Abstract</b></h3>
           <br>
           <div class="row" style="margin-bottom:5px">
-            <div class="col" style="text-align:center">
-              <img class="thumbnail" src="./images/front.png" style="width:80%; margin-bottom:20px">
+<!--             <div class="col" style="text-align:center">
+              <img class="thumbnail" src="./images/pyafar_demo.gif" style="width:80%; margin-bottom:20px">
             </div>
-          </div>
+ -->          </div>
           <p class="text-left">
-            Light Field Networks, the re-formulations of radiance fields to oriented rays, are magnitudes faster than
-            their coordinate network counterparts, and provide
-            higher fidelity with respect to representing 3D structures from 2D observations. They would be well suited
-            for generic scene representation and manipulation,
-            but suffer from one problem: they are limited to holistic and static scenes. In this paper, we propose the
-            Dynamic Light Field Network (DyLiN) method that can handle non-rigid deformations,
-            including topological changes. We learn a deformation field from input rays to canonical rays, and lift them
-            into a higher dimensional space to handle discontinuities.</p>
+            PyAFAR is a Python-based, open-source facial action unit detection library for use with adults and infants. Convolutional neural networks were trained on BP4D+ for adults and MIAMI and CLOCK databases for infants. In adults, AU occurrence and intensity detection are enabled for 12 action units (AU). The AU chosen were selected on the criterion that they have base rates greater than 5% in BP4D+. Action unit intensity estimation is enabled for 5 of these AU. In infants, AU occurrence is enabled for 9 action units that are involved in expression of positive and negative affect. For both adults and infants, facial landmark and head pose tracking are enabled as well. For adults, multiple persons within a video may be tracked. The library is developed for ease of use. The models are available for fine-tuning and further training. PyAFAR may be easily incorporated into user Python code.</p>
             <div class="row" style="margin-bottom:5px">
               <div class="col" style="text-align:center">
-                <img class="thumbnail" src="./images/DyLiN.png" style="width:70%; margin-bottom:0px">
+                <img class="thumbnail" src="./images/pyafar_pipeline.JPG" style="width:70%; margin-bottom:0px">
               </div>
             </div>
-            <p class="text-fig">Schematic diagram of our proposed DyLiN architecture. Given a ray r = (o, d) and time t as input, we deform r into
-              r' = (o', d'), and sample few points x<sub>k</sub>, k = 1, . . . , K along r' to
-              encode it (blue). In parallel, we also lift r and t to the hyperspace
-              code w (green), and concatenate it with each x<sub>k</sub>. We use the concatenation 
-              to regress the RGB color of r at t directly (red).
+            <p class="text-fig">Pipeline of PyAFAR.
             </p> 
-            <p class="text-left">We further introduce CoDyLiN, which augments DyLiN with controllable
-              attribute inputs. We train both models via knowledge distillation from pretrained dynamic 
-              radiance fields. We evaluated DyLiN using both synthetic
-              and real world datasets that include non-rigid deformations of
-              varying difficulty and type. DyLiN qualitatively outperformed and quantitatively
-              matched state-of-the art methods in terms of visual fidelity,
-              while being 25−71× computationally faster. 
-              We also tested CoDyLiN on attribute annotated data and it surpassed its teacher model.
+            <p class="text-left">PyAFAR has separate modules for facial landmark extraction, tracking and headpose prediction. It uses[MediaPipe](https://research.google/pubs/pub48292/) library for landmarks. Tracking is performed using the [FaceNet](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Schroff_FaceNet_A_Unified_2015_CVPR_paper.pdf). The Perspective-n-Point (PnP) method is used to predict Roll, Pitch and Yaw.
             </p>
+
+            <p class="text-left"> The landmark predictions are used to normalize faces using the [dlib](http://dlib.net/) library.</p>
+            <p class="text-left"> Normalized faces are used for AU predictions (occurrence and intensity). Separate detection modules for occurrence are available for adults and infants. Intensity predictions are available for adults only.</p>
+            <p class="text-left"> PyAFAR can output frame-level predictions in CSV and JSON formats to enable easy reading with most platforms used by both computational as well as domain experts.</p>
           </p>
         </div>
       </div>
@@ -190,7 +176,7 @@
             we can fully control the smile, closing of the eye, and raising of the eyebrow</p>
           <div class="embed-responsive embed-responsive-video-synthetic">
             <video width="640" height="360" autoplay loop muted>
-              <source src="./images/codylin-control.mov" type="video/mp4">
+              <source src="./images/pyafar_demo.gif" type="video/gif">
               Your browser does not support the video tag.
             </video>
           </div>
