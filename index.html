@@ -84,7 +84,7 @@
             <p>PyAFAR has separate modules for facial feature extraction and tracking, Face normalization and AU predictions:</p>
             <p class="text-left">It uses <a href="https://research.google/pubs/pub48292/">MediaPipe</a> library for landmarks. Tracking is performed using the <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Schroff_FaceNet_A_Unified_2015_CVPR_paper.pdf">FaceNet</a>. The Perspective-n-Point (PnP) method is used to predict Roll, Pitch and Yaw.</p>
 
-            <p class="text-left"> The landmark predictions are used to normalize faces using the [dlib](http://dlib.net/) library.</p>
+            <p class="text-left"> The landmark predictions are used to normalize faces using the <a href="http://dlib.net/">dlib</a> library.</p>
             <p class="text-left"> Normalized faces are used for AU predictions (occurrence and intensity). Separate detection modules for occurrence are available for adults and infants. Intensity predictions are available for adults only.</p>
             <p class="text-left"> PyAFAR can output frame-level predictions in CSV and JSON formats to enable easy reading with most platforms used by both computational as well as domain experts.</p>
           </p>
@@ -99,7 +99,11 @@
       <div class="row">
         <div class="col-12 text-center">
           <h3><b>Demo</b></h3>
-          <iframe width="560" height="315" src="./images/pyafar_demo.git" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          <!-- <iframe width="560" height="315" src="./images/pyafar_demo.git" title="YouTube video player" frameborder="0" allowfullscreen></iframe> -->
+          <!-- added demo video -->
+            <div class="col" style="text-align:center">
+              <img class="thumbnail" src="./images/pyafar_demo.gif" style="width:80%; margin-bottom:20px">
+          </div>
         </div>
       </div>
     </div>
@@ -165,8 +169,9 @@
     </div>
   </section>
   <br>
- -->  <br>
-  <section>
+ -->  
+  <br>
+<!--   <section>
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -186,20 +191,20 @@
       </div>
     </div>
   </section>
-  <section>
+ -->  <section>
     <div class="container">
       <div class="row ">
         <div class="col-12">
             <h3><b>Citation</b></h3>
                 <pre style="background-color: #e9eeef">
                   <code>
-    @inproceedings{hindujapyafar,
-  title={PyAFAR: Python-based Automated Facial Action Recognition library for use in Infants and Adults},
-  author={Hinduja, Saurabh and Ertugrul, Itir Onal and Bilalpur, Maneesh and Messinger, Daniel S and Cohn, Jeffrey F},
-  booktitle={International Conference on Affective Computing and Intelligent Interaction},
-  year={2023},
-  organization={IEEE}
-}
+                    @inproceedings{hindujapyafar,
+                  title={PyAFAR: Python-based Automated Facial Action Recognition library for use in Infants and Adults},
+                  author={Hinduja, Saurabh and Ertugrul, Itir Onal and Bilalpur, Maneesh and Messinger, Daniel S and Cohn, Jeffrey F},
+                  booktitle={International Conference on Affective Computing and Intelligent Interaction},
+                  year={2023},
+                  organization={IEEE}
+                  }
                 </code></pre>
         </div>
       </div>
